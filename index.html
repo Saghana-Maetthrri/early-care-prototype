@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EarlyCare - AI-assisted elderly care monitoring prototype">
+  <title>EarlyCare | Elderly Care Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">Early<span>Care</span></div>
+      <p>Early detection. Faster care. Safer ageing.</p>
+    </div>
+    <div class="status-pill"><span class="dot"></span> Prototype monitoring active</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">ELDERLY CARE &amp; HEALTHY AGEING</p>
+        <h1>Keep an eye on what matters, even from a distance.</h1>
+        <p class="hero-copy">An AI-assisted prototype that turns daily activity signals into early warnings for family members and caregivers.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-icon">♥</div>
+        <div><strong>Care status</strong><span id="careStatus">All monitored signals normal</span></div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Care overview">
+      <article class="stat"><span>Activity score</span><strong id="activityScore">82%</strong><small>Today · demo data</small></article>
+      <article class="stat"><span>Risk level</span><strong id="riskLevel" class="green">Low</strong><small>Prototype assessment</small></article>
+      <article class="stat"><span>Last movement</span><strong id="lastMovement">2 min ago</strong><small>Living room sensor · simulated</small></article>
+      <article class="stat"><span>Caregiver</span><strong>Connected</strong><small>Demo family contact</small></article>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">LIVE MONITOR</p><h2>Today's activity</h2></div>
+          <button id="simulateBtn" class="primary" type="button">Simulate event</button>
+        </div>
+        <div class="timeline" id="timeline">
+          <div class="event normal baseline-event"><span class="event-dot"></span><div><strong>Normal movement detected</strong><small>Living room · 2 minutes ago</small></div><b>Normal</b></div>
+          <div class="event normal baseline-event"><span class="event-dot"></span><div><strong>Medication routine completed</strong><small>Morning · 8:30 AM</small></div><b>Completed</b></div>
+          <div class="event normal baseline-event"><span class="event-dot"></span><div><strong>Breakfast activity detected</strong><small>Kitchen · 8:05 AM</small></div><b>Normal</b></div>
+          <div class="event warning baseline-event"><span class="event-dot"></span><div><strong>Long inactivity period</strong><small>Bedroom · 7:10 AM</small></div><b>Reviewed</b></div>
+        </div>
+      </div>
+
+      <aside class="panel alert-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">CAREGIVER ALERTS</p><h2>Attention centre</h2></div>
+          <span id="alertCount" class="count">0</span>
+        </div>
+        <div id="alertBox" class="empty-alert">
+          <div class="big-check">✓</div>
+          <strong>No active alerts</strong>
+          <p>Everything looks normal. Simulate an event to see the prototype alert workflow.</p>
+        </div>
+        <button id="resolveBtn" class="secondary hidden" type="button">Mark alert as resolved</button>
+      </aside>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div><p class="eyebrow">DAILY ROUTINES</p><h2>Personal care checklist</h2></div>
+        <span class="demo-label">DEMO DATA</span>
+      </div>
+      <div class="routine-grid">
+        <label class="routine"><input type="checkbox" checked><span><b>Morning medicine</b><small>Scheduled 8:30 AM</small></span></label>
+        <label class="routine"><input type="checkbox" checked><span><b>Breakfast</b><small>Scheduled 9:00 AM</small></span></label>
+        <label class="routine"><input type="checkbox"><span><b>Afternoon medicine</b><small>Scheduled 1:00 PM</small></span></label>
+        <label class="routine"><input type="checkbox"><span><b>Evening walk</b><small>Scheduled 5:30 PM</small></span></label>
+      </div>
+    </section>
+
+    <section class="how">
+      <div><p class="eyebrow">HOW IT WORKS</p><h2>From everyday signals to timely care</h2></div>
+      <div class="steps">
+        <div><span>01</span><b>Collect</b><p>IoT sensors or phone data capture movement and routine signals.</p></div>
+        <div><span>02</span><b>Analyse</b><p>An ML model checks for unusual patterns and potential risks.</p></div>
+        <div><span>03</span><b>Alert</b><p>Caregivers receive a clear notification when attention is needed.</p></div>
+      </div>
+    </section>
+
+    <section class="prototype-note">
+      <strong>Prototype note:</strong> This hackathon demo uses simulated sensor events and sample data. It does not provide medical diagnosis. In a real implementation, the simulator would be replaced by ESP32/Raspberry Pi or approved wearable sensors, a secure backend and a validated anomaly/fall-detection model.
+    </section>
+  </main>
+
+  <footer>EarlyCare Prototype · HSC Hackathon · Tamil Nadu</footer>
+  <script src="script.js"></script>
+</body>
+</html>
